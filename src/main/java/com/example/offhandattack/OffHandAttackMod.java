@@ -11,8 +11,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class OffHandAttackMod {
     public static final String MODID = "offhandattack";
 
-    public OffHandAttackMod() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public OffHandAttackMod(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }

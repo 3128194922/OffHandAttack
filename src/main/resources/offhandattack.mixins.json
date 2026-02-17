@@ -3,8 +3,9 @@
   "minVersion": "0.8",
   "package": "com.example.offhandattack.mixin",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "offhandattack.refmap.json",
   "mixins": [
-    "PlayerMixin"
+    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1
