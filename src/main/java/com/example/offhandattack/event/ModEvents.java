@@ -93,6 +93,38 @@ public class ModEvents {
     }
 
     @SubscribeEvent
+    public static void onRightClickItem(net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickItem event) {
+        if (event.getHand() == InteractionHand.OFF_HAND) {
+            ItemStack item = event.getItemStack();
+            if (item.is(ModTags.IS_HANDS) && !item.is(ModTags.CAN_HANDS_USE)) {
+                event.setCanceled(true);
+                event.setCancellationResult(net.minecraft.world.InteractionResult.FAIL);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onRightClickBlock(net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock event) {
+        if (event.getHand() == InteractionHand.OFF_HAND) {
+            ItemStack item = event.getItemStack();
+            if (item.is(ModTags.IS_HANDS) && !item.is(ModTags.CAN_HANDS_USE)) {
+                event.setUseItem(net.minecraftforge.eventbus.api.Event.Result.DENY);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntityInteract(net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract event) {
+        if (event.getHand() == InteractionHand.OFF_HAND) {
+            ItemStack item = event.getItemStack();
+            if (item.is(ModTags.IS_HANDS) && !item.is(ModTags.CAN_HANDS_USE)) {
+                event.setCanceled(true);
+                event.setCancellationResult(net.minecraft.world.InteractionResult.FAIL);
+            }
+        }
+    }
+
+    @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
             Player player = event.player;

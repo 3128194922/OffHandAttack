@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import javax.annotation.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,9 +22,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Minecraft.class)
 public abstract class MinecraftMixin {
 
-    @Shadow public LocalPlayer player;
-    @Shadow public HitResult hitResult;
-    @Shadow protected int missTime;
+    @Shadow(aliases = "f_91074_") @Nullable public LocalPlayer player;
+    @Shadow(aliases = "f_91077_") @Nullable public HitResult hitResult;
+    @Shadow(aliases = "f_91066_") protected int missTime;
 
     @Inject(method = "startAttack", at = @At("HEAD"), cancellable = true)
     private void onStartAttack(CallbackInfoReturnable<Boolean> cir) {
