@@ -1,4 +1,4 @@
-本MOD将下面两个mod的主副手攻击和双手武器功能单独分支出来。本mod由AI编写。不做发布。
+本MOD将下面两个mod的主副手攻击和双手武器功能单独分支出来。本mod由AI编写。
 
 参考MOD：
 https://github.com/ZsoltMolnarrr/BetterCombat/tree/1.20.1
