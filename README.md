@@ -7,6 +7,13 @@
 
 当前版本采用纯标签判定，不依赖配置界面或物品白名单代码。只要给物品打上对应标签，就可以接入功能。
 
+# 参考MOD：
+https://github.com/ZsoltMolnarrr/BetterCombat/tree/1.20.1
+开源协议：https://github.com/ZsoltMolnarrr/BetterCombat/blob/1.20.1/LICENSE
+
+https://github.com/BunnyCinnamon/OffHandCombat
+开源协议：https://github.com/BunnyCinnamon/OffHandCombat/blob/master/LICENSE
+
 ## 环境
 
 - Minecraft: `1.20.1`
